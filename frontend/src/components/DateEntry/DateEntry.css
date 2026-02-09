@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;600&display=swap');
+
+:root {
+    --primary-pink: #FFC1CC;
+    --soft-pink: #FFE4E1;
+    --dark-pink: #DB7093;
+    --white: #FFFFFF;
+    --shadow: rgba(219, 112, 147, 0.2);
+}
+
+.date-entry-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+    font-family: 'Quicksand', sans-serif;
+    color: #555;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: 0 15px 40px var(--shadow);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 4px solid white;
+    animation: fadeIn 1s ease-out;
+    z-index: 10;
+    position: relative;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--dark-pink);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #888;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+}
+
+.date-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-segment label {
+    font-size: 0.9rem;
+    color: var(--dark-pink);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.manual-input {
+    width: 80px;
+    padding: 15px 5px;
+    border: 2px solid var(--primary-pink);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--dark-pink);
+    background: #FFF;
+    transition: all 0.3s ease;
+    outline: none;
+    text-align: center;
+}
+
+.manual-input.year {
+    width: 120px;
+}
+
+.manual-input:focus {
+    border-color: var(--dark-pink);
+    box-shadow: 0 0 15px var(--shadow);
+    transform: scale(1.05);
+}
+
+.manual-input::placeholder {
+    color: #ffdae0;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--primary-pink), var(--dark-pink));
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 5px 15px var(--shadow);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* Floral Decorations */
+.flower {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flower-1 {
+    top: -5%;
+    left: -5%;
+    width: 250px;
+    height: 250px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.flower-2 {
+    bottom: -5%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    animation: float 7s ease-in-out infinite reverse;
+}
+
+.flower-3 {
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    animation: sway 5s ease-in-out infinite;
+}
+
+.flower-4 {
+    bottom: 15%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    animation: sway 6s ease-in-out infinite reverse;
+}
+
+/* SVG styling */
+.flower svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 5px 10px rgba(219, 112, 147, 0.2));
+}
+
+.main-logo-flower {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    animation: rotate 20s linear infinite;
+}
+
+.main-logo-flower svg {
+    filter: drop-shadow(0 5px 15px rgba(219, 112, 147, 0.4));
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
