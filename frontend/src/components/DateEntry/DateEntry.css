@@ -230,6 +230,30 @@
     animation: flyLeft 18s linear infinite;
 }
 
+.bee-3 {
+    top: 20%;
+    left: -10%;
+    animation: flyDiagonal1 20s linear infinite;
+}
+
+.bee-4 {
+    bottom: 20%;
+    right: -10%;
+    animation: flyDiagonal2 22s linear infinite;
+}
+
+.bee-5 {
+    top: 80%;
+    left: -5%;
+    animation: flyErratic1 25s linear infinite;
+}
+
+.bee-6 {
+    top: 15%;
+    right: 20%;
+    animation: flyErratic2 18s linear infinite;
+}
+
 @keyframes flyRight {
     0% {
         transform: translateX(0) translateY(0) rotate(0deg);
@@ -271,6 +295,92 @@
 
     100% {
         transform: translateX(0) translateY(0) scaleX(-1) rotate(0deg);
+    }
+}
+
+@keyframes flyDiagonal1 {
+    0% {
+        left: -10%;
+        top: 20%;
+        transform: rotate(15deg);
+    }
+
+    100% {
+        left: 110%;
+        top: 60%;
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes flyDiagonal2 {
+    0% {
+        right: -10%;
+        bottom: 20%;
+        transform: scaleX(-1) rotate(-15deg);
+    }
+
+    100% {
+        right: 110%;
+        bottom: 70%;
+        transform: scaleX(-1) rotate(-15deg);
+    }
+}
+
+@keyframes flyErratic1 {
+    0% {
+        left: -5%;
+        top: 80%;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        left: 20%;
+        top: 60%;
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        left: 40%;
+        top: 85%;
+        transform: rotate(10deg);
+    }
+
+    60% {
+        left: 60%;
+        top: 50%;
+        transform: rotate(-5deg);
+    }
+
+    80% {
+        left: 80%;
+        top: 75%;
+        transform: rotate(5deg);
+    }
+
+    100% {
+        left: 105%;
+        top: 60%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes flyErratic2 {
+    0% {
+        right: 20%;
+        top: 15%;
+        transform: translateX(0) scaleX(-1);
+    }
+
+    50% {
+        right: 80%;
+        top: 25%;
+        transform: translateX(-50px) scaleX(-1);
+    }
+
+    100% {
+        right: 20%;
+        top: 15%;
+        transform: translateX(0) scaleX(-1);
     }
 }
 

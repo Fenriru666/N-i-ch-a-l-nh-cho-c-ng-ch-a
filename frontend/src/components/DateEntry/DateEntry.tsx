@@ -86,6 +86,10 @@ const DateEntry: React.FC = () => {
             {/* Bee Decorations */}
             <div className="bee bee-1"><BeeSVG /></div>
             <div className="bee bee-2"><BeeSVG /></div>
+            <div className="bee bee-3"><BeeSVG /></div>
+            <div className="bee bee-4"><BeeSVG /></div>
+            <div className="bee bee-5"><BeeSVG /></div>
+            <div className="bee bee-6"><BeeSVG /></div>
 
             <div className="card">
                 <MainLogoFlower />
