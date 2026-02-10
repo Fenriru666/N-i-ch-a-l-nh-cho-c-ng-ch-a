@@ -228,12 +228,12 @@ interface Message {
 }
 
 const flowers: Message[] = [
-    { id: 1, title: "Cho những ngày mưa", content: "Nghe nói hôm nay trời mưa,\nEm có buồn không?\nNếu có thì hãy nhớ,\nLuôn có một người sẵn sàng che ô cho em nhé! ☔", icon: FlowerRoles, imageName: "bouquet1.png" },
-    { id: 2, title: "Cho những ngày nắng", content: "Nắng lên rồi! ☀️\nHy vọng nụ cười của em hôm nay cũng rạng rỡ như ánh mặt trời vậy.\nYêu em! ❤️", icon: FlowerSunflowerBouquet, imageName: "bouquet2.png" },
-    { id: 3, title: "Khi em thấy mệt", content: "Nếu mệt quá thì nghỉ ngơi xíu nhé.\nĐừng cố quá sức.\nVai anh đây, lúc nào cũng sẵn sàng để em dựa vào. 🧸", icon: FlowerIris, imageName: "bouquet3.png" },
-    { id: 4, title: "Lời nhắn bí mật", content: "Có một bí mật anh muốn nói...\nĐó là...\nAnh nhớ em nhiều lắm! 🤫💕", icon: FlowerSunflower, imageName: "bouquet4.png" },
-    { id: 5, title: "Cảm ơn em", content: "Cảm ơn em vì đã đến bên đời anh.\nSự hiện diện của em là món quà tuyệt vời nhất. 🎁", icon: FlowerTulips, imageName: "bouquet5.png" },
-    { id: 6, title: "Yêu thương", content: "Không cần ngày đặc biệt,\nChỉ cần là em,\nthì ngày nào cũng là ngày Valentine. 🌹", icon: FlowerPoppy, imageName: "bouquet6.png" },
+    { id: 1, title: "Nếu hôm nay là ngày mưa", content: "Liệu trời có làm cho em buồn hông,\n Nếu em có buồn thì hãy nhớ,\nLuôn có anh sẵn sàng che ô cho em nhé! ☔", icon: FlowerRoles, imageName: "bouquet1.png" },
+    { id: 2, title: "Cho những ngày nắng", content: "Nắng lên rồi phải hông ta! ☀️\nHay đó là nụ cười rạng rỡ của em hôm nay.\nYêu em cũng như mặt trời của anh! ❤️", icon: FlowerSunflowerBouquet, imageName: "bouquet2.png" },
+    { id: 3, title: "Khi cuộc sống làm em thấy mệt", content: "Nếu mệt quá thì nghỉ ngơi xíu nhé.\nĐừng cố quá sức.\nVai anh đây, lúc nào cũng sẵn sàng để em dựa vào. 🧸", icon: FlowerIris, imageName: "bouquet3.png" },
+    { id: 4, title: "Lời yêu anh gửi em", content: "Có một điều anh muốn nói...\nĐó là...\nAnh nhớ em nhiều lắm! 🤫💕", icon: FlowerSunflower, imageName: "bouquet4.png" },
+    { id: 5, title: "Lời cảm ơn anh gửi em", content: "Cảm ơn em vì đã đến bên đời anh.\n Có thể em đến hơi muộn.\nNhưng không sao, sự hiện diện của em là món quà tuyệt vời nhất. 🎁", icon: FlowerTulips, imageName: "bouquet5.png" },
+    { id: 6, title: "Tình yêu của chúng ta", content: "Không cần ngày đặc biệt,\nChỉ cần là em,\nthì ngày nào cũng là ngày Valentine. 🌹", icon: FlowerPoppy, imageName: "bouquet6.png" },
 ];
 
 // Corner Wrappers for ImageOrSVG Fallback

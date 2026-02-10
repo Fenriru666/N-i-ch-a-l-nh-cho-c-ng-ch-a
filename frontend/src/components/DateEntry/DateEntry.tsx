@@ -4,24 +4,11 @@ import './DateEntry.css';
 
 // --- SVGs for Lush Decorations ---
 
-const SpinningFlower: React.FC = () => (
-    <svg viewBox="0 0 100 100" className="spinning-flower" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="15" fill="#FFF" stroke="#FFB7B2" strokeWidth="2" />
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-            <path
-                key={i}
-                d="M50 50 Q65 20 80 50 Q65 80 50 50"
-                fill={i % 2 === 0 ? "#FFC1CC" : "#FFDAC1"}
-                opacity="0.9"
-                transform={`rotate(${angle} 50 50)`}
-            />
-        ))}
-        <circle cx="50" cy="50" r="10" fill="#FF69B4" opacity="0.2" />
-    </svg>
-);
 
-const FlowerCluster: React.FC = () => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+// Lush Corner Cluster (Reused from LovePage)
+const LushCorner: React.FC<{ style?: React.CSSProperties }> = ({ style }) => (
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style={style}>
         {/* Leaves Background */}
         <path d="M50 150 Q20 100 60 80" stroke="#90EE90" strokeWidth="4" fill="none" />
         <path d="M150 150 Q180 100 140 80" stroke="#90EE90" strokeWidth="4" fill="none" />
@@ -42,29 +29,31 @@ const FlowerCluster: React.FC = () => (
     </svg>
 );
 
-const HangingVine: React.FC = () => (
-    <svg viewBox="0 0 100 300" preserveAspectRatio="none" className="vine-branch" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 0 Q20 50 50 100 Q80 150 50 200 Q20 250 50 300" stroke="#90EE90" strokeWidth="3" fill="none" />
-        <circle cx="20" cy="50" r="5" fill="#FFB7B2" />
-        <circle cx="80" cy="150" r="5" fill="#E0BBE4" />
-        <circle cx="20" cy="250" r="5" fill="#FFDAC1" />
-        <path d="M50 50 L30 60" stroke="#90EE90" strokeWidth="2" />
-        <path d="M50 150 L70 160" stroke="#90EE90" strokeWidth="2" />
-    </svg>
-);
+// --- Image/SVG Hybrid Component ---
+const ImageOrSVG: React.FC<{ imageName: string; SvgComponent: React.ComponentType; alt: string }> = ({ imageName, SvgComponent, alt }) => {
+    const [imageError, setImageError] = useState(false);
 
-const BeeSVG: React.FC = () => (
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 40 C10 20 10 60 30 50" fill="#E6E6FA" opacity="0.8" />
-        <path d="M40 35 C20 10 20 50 40 45" fill="#E6E6FA" opacity="0.8" />
-        <ellipse cx="50" cy="50" rx="15" ry="10" fill="#FFD700" />
-        <path d="M45 42 L45 58" stroke="#000" strokeWidth="2" />
-        <path d="M50 40 L50 60" stroke="#000" strokeWidth="2" />
-        <path d="M55 42 L55 58" stroke="#000" strokeWidth="2" />
-        <circle cx="58" cy="48" r="1.5" fill="#000" />
-        <path d="M35 50 L30 50" stroke="#000" strokeWidth="1" />
-    </svg>
-);
+    if (imageError) {
+        return <SvgComponent />;
+    }
+
+    return (
+        <img
+            src={`/${imageName}`}
+            alt={alt}
+            onError={() => setImageError(true)}
+            className="bouquet-image"
+        />
+    );
+};
+
+// Corner Wrappers for ImageOrSVG Fallback
+const CornerTL = () => <LushCorner />;
+const CornerTR = () => <LushCorner style={{ transform: 'scaleX(-1)' }} />;
+const CornerBL = () => <LushCorner style={{ transform: 'scaleY(-1)' }} />;
+const CornerBR = () => <LushCorner style={{ transform: 'scale(-1)' }} />;
+
+
 
 const DateEntry: React.FC = () => {
     const [day, setDay] = useState('');
@@ -97,33 +86,29 @@ const DateEntry: React.FC = () => {
     return (
         <div className="date-entry-container">
             {/* Hanging Vines */}
-            <div className="top-vine">
-                <HangingVine />
-                <HangingVine />
-                <HangingVine />
-                <HangingVine />
-                <HangingVine />
-                <HangingVine />
+            {/* Corner Decorations (From LovePage) */}
+            <div className="shop-corner-decoration shop-top-left">
+                <ImageOrSVG imageName="corner1.png" SvgComponent={CornerTL} alt="Góc trên trái" />
+            </div>
+            <div className="shop-corner-decoration shop-top-right">
+                <ImageOrSVG imageName="corner2.png" SvgComponent={CornerTR} alt="Góc trên phải" />
+            </div>
+            <div className="shop-corner-decoration shop-bottom-left">
+                <ImageOrSVG imageName="corner3.png" SvgComponent={CornerBL} alt="Góc dưới trái" />
+            </div>
+            <div className="shop-corner-decoration shop-bottom-right">
+                <ImageOrSVG imageName="corner4.png" SvgComponent={CornerBR} alt="Góc dưới phải" />
             </div>
 
-            {/* Lush Corner Clusters */}
-            <div className="corner-cluster cluster-tl"><FlowerCluster /></div>
-            <div className="corner-cluster cluster-tr"><FlowerCluster /></div>
-            <div className="corner-cluster cluster-bl"><FlowerCluster /></div>
-            <div className="corner-cluster cluster-br"><FlowerCluster /></div>
-
-            {/* Bees Orbiting Clusters */}
-            <div className="bee bee-tl"><BeeSVG /></div>
-            <div className="bee bee-tr"><BeeSVG /></div>
-            <div className="bee bee-bl"><BeeSVG /></div>
-            <div className="bee bee-br"><BeeSVG /></div>
-
             <div className="card">
-                <div className="main-logo-container">
-                    <SpinningFlower />
+                <div className="welcome-board-container" style={{ marginTop: '0', marginBottom: '2rem' }}>
+                    <div className="welcome-board">
+                        <div className="board-inner">
+                            <h1 className="board-text" style={{ fontSize: '1.8rem' }}>Xin chào!<br />mời tình yêu điền thông tin</h1>
+                        </div>
+                    </div>
                 </div>
-                <h1 className="title">Xin chào!</h1>
-                <p className="subtitle">Hãy cho mình biết ngày sinh của bạn nhé ✨</p>
+                <p className="subtitle" style={{ color: '#888' }}>Hãy điền ngày sinh của tình yêu vào đây nhá</p>
 
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
