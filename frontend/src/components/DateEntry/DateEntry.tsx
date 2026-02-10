@@ -9,6 +9,28 @@ const FlowerSVG: React.FC<{ color: string }> = ({ color }) => (
         <circle cx="50" cy="50" r="10" fill="#FFF" />
     </svg>
 );
+
+const BeeSVG: React.FC = () => (
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Wings */}
+        <path d="M30 40 C10 20 10 60 30 50" fill="#E6E6FA" opacity="0.8" />
+        <path d="M40 35 C20 10 20 50 40 45" fill="#E6E6FA" opacity="0.8" />
+
+        {/* Body */}
+        <ellipse cx="50" cy="50" rx="15" ry="10" fill="#FFD700" />
+
+        {/* Stripes */}
+        <path d="M45 42 L45 58" stroke="#000" strokeWidth="2" />
+        <path d="M50 40 L50 60" stroke="#000" strokeWidth="2" />
+        <path d="M55 42 L55 58" stroke="#000" strokeWidth="2" />
+
+        {/* Eyes */}
+        <circle cx="58" cy="48" r="1.5" fill="#000" />
+
+        {/* Stinger */}
+        <path d="M35 50 L30 50" stroke="#000" strokeWidth="1" />
+    </svg>
+);
 const MainLogoFlower: React.FC = () => (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="main-logo-flower">
         <path d="M50 50 L50 20 C65 20 75 35 50 50" fill="#FFB7B2" />
@@ -60,6 +82,10 @@ const DateEntry: React.FC = () => {
             <div className="flower flower-2"><FlowerSVG color="#FFDAC1" /></div>
             <div className="flower flower-3"><FlowerSVG color="#E2F0CB" /></div>
             <div className="flower flower-4"><FlowerSVG color="#B5EAD7" /></div>
+
+            {/* Bee Decorations */}
+            <div className="bee bee-1"><BeeSVG /></div>
+            <div className="bee bee-2"><BeeSVG /></div>
 
             <div className="card">
                 <MainLogoFlower />

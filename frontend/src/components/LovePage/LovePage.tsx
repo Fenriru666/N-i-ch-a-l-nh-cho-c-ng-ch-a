@@ -6,7 +6,7 @@ const LovePage: React.FC = () => {
         <div className="love-page-container">
             <div className="love-card">
                 <div className="heart-decoration">💖</div>
-                <h1 className="love-title">Gửi đến thiên thần của anh</h1>
+                <h1 className="love-title">Gửi đến em ghệ đít bự của anh</h1>
 
                 <div className="message-box">
                     <p>
