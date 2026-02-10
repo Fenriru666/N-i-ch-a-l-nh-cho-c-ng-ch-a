@@ -1,0 +1,16 @@
+PLEASE READ THIS TO ADD YOUR OWN BOUQUET IMAGES
+
+To use your own 2D flower illustrations:
+
+1.  Find or create your PNG images (transparent background recommended).
+2.  Rename them to:
+    -   bouquet1.png (For 'Cho những ngày mưa')
+    -   bouquet2.png (For 'Cho những ngày nắng')
+    -   bouquet3.png (For 'Khi em thấy mệt')
+    -   bouquet4.png (For 'Lời nhắn bí mật')
+    -   bouquet5.png (For 'Cảm ơn em')
+    -   bouquet6.png (For 'Yêu thương')
+3.  Paste these files directly into this folder (`frontend/public/`).
+4.  Refresh the web page.
+
+If the images are missing, the website will automatically show the default 2D-style drawings instead.

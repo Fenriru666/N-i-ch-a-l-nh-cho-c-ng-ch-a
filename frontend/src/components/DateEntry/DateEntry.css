@@ -123,6 +123,7 @@
     transform: translateY(1px);
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -135,279 +136,200 @@
     }
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(5deg);
-    }
-
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-}
-
-@keyframes sway {
-    0% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-
-    100% {
-        transform: rotate(-5deg);
-    }
-}
-
-/* Floral Decorations */
-.flower {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* 4 Corners Positioning */
-.flower-1 {
-    top: -5%;
-    left: -5%;
-    width: 250px;
-    height: 250px;
-    animation: float 6s ease-in-out infinite;
-}
-
-.flower-2 {
-    top: -5%;
-    right: -5%;
-    width: 250px;
-    height: 250px;
-    transform: scaleX(-1);
-    /* Mirror for symmetry */
-    animation: float 7s ease-in-out infinite reverse;
-}
-
-.flower-3 {
-    bottom: -5%;
-    left: -5%;
-    width: 250px;
-    height: 250px;
-    transform: scaleY(-1);
-    /* Mirror for symmetry */
-    animation: sway 5s ease-in-out infinite;
-}
-
-.flower-4 {
-    bottom: -5%;
-    right: -5%;
-    width: 250px;
-    height: 250px;
-    transform: scale(-1);
-    /* Mirror both axes */
-    animation: sway 6s ease-in-out infinite reverse;
-}
-
-/* Bee Decorations */
-.bee {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.bee-1 {
-    top: 40%;
-    left: 10%;
-    animation: flyRight 15s linear infinite;
-}
-
-.bee-2 {
-    top: 60%;
-    right: 10%;
-    animation: flyLeft 18s linear infinite;
-}
-
-.bee-3 {
-    top: 20%;
-    left: -10%;
-    animation: flyDiagonal1 20s linear infinite;
-}
-
-.bee-4 {
-    bottom: 20%;
-    right: -10%;
-    animation: flyDiagonal2 22s linear infinite;
-}
-
-.bee-5 {
-    top: 80%;
-    left: -5%;
-    animation: flyErratic1 25s linear infinite;
-}
-
-.bee-6 {
-    top: 15%;
-    right: 20%;
-    animation: flyErratic2 18s linear infinite;
-}
-
-@keyframes flyRight {
-    0% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-
-    25% {
-        transform: translateX(20px) translateY(-15px) rotate(5deg);
-    }
-
-    50% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-
-    75% {
-        transform: translateX(-20px) translateY(15px) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-}
-
-@keyframes flyLeft {
-    0% {
-        transform: translateX(0) translateY(0) scaleX(-1) rotate(0deg);
-    }
-
-    25% {
-        transform: translateX(-20px) translateY(15px) scaleX(-1) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateX(0) translateY(0) scaleX(-1) rotate(0deg);
-    }
-
-    75% {
-        transform: translateX(20px) translateY(-15px) scaleX(-1) rotate(5deg);
-    }
-
-    100% {
-        transform: translateX(0) translateY(0) scaleX(-1) rotate(0deg);
-    }
-}
-
-@keyframes flyDiagonal1 {
-    0% {
-        left: -10%;
-        top: 20%;
-        transform: rotate(15deg);
-    }
-
-    100% {
-        left: 110%;
-        top: 60%;
-        transform: rotate(15deg);
-    }
-}
-
-@keyframes flyDiagonal2 {
-    0% {
-        right: -10%;
-        bottom: 20%;
-        transform: scaleX(-1) rotate(-15deg);
-    }
-
-    100% {
-        right: 110%;
-        bottom: 70%;
-        transform: scaleX(-1) rotate(-15deg);
-    }
-}
-
-@keyframes flyErratic1 {
-    0% {
-        left: -5%;
-        top: 80%;
-        transform: rotate(0deg);
-    }
-
-    20% {
-        left: 20%;
-        top: 60%;
-        transform: rotate(-10deg);
-    }
-
-    40% {
-        left: 40%;
-        top: 85%;
-        transform: rotate(10deg);
-    }
-
-    60% {
-        left: 60%;
-        top: 50%;
-        transform: rotate(-5deg);
-    }
-
-    80% {
-        left: 80%;
-        top: 75%;
-        transform: rotate(5deg);
-    }
-
-    100% {
-        left: 105%;
-        top: 60%;
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes flyErratic2 {
-    0% {
-        right: 20%;
-        top: 15%;
-        transform: translateX(0) scaleX(-1);
-    }
-
-    50% {
-        right: 80%;
-        top: 25%;
-        transform: translateX(-50px) scaleX(-1);
-    }
-
-    100% {
-        right: 20%;
-        top: 15%;
-        transform: translateX(0) scaleX(-1);
-    }
-}
-
-/* SVG styling */
-.flower svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 5px 10px rgba(219, 112, 147, 0.2));
-}
-
-.main-logo-flower {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
-    animation: rotate 20s linear infinite;
-}
-
-.main-logo-flower svg {
-    filter: drop-shadow(0 5px 15px rgba(219, 112, 147, 0.4));
-}
-
-@keyframes rotate {
+@keyframes spin-slow {
     from {
         transform: rotate(0deg);
     }
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes sway-vine {
+
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Updated Decorations */
+
+/* LUSH CORNER CLUSTERS */
+.corner-cluster {
+    position: absolute;
+    width: 350px;
+    /* Bigger area for lushness */
+    height: 350px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cluster-tl {
+    top: -50px;
+    left: -50px;
+}
+
+.cluster-tr {
+    top: -50px;
+    right: -50px;
+    transform: scaleX(-1);
+}
+
+.cluster-bl {
+    bottom: -50px;
+    left: -50px;
+    transform: scaleY(-1);
+}
+
+.cluster-br {
+    bottom: -50px;
+    right: -50px;
+    transform: scale(-1);
+}
+
+/* VINE DECORATION */
+.top-vine {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.vine-branch {
+    width: 200px;
+    /* Adjust based on SVG size */
+    height: 100%;
+    animation: sway-vine 6s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+.vine-branch:nth-child(even) {
+    animation-delay: -3s;
+}
+
+/* SPINNING LOGO FLOWER */
+.main-logo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinning-flower {
+    width: 100%;
+    height: 100%;
+    animation: spin-slow 10s linear infinite;
+    filter: drop-shadow(0 4px 6px rgba(219, 112, 147, 0.3));
+}
+
+/* BEES - FLIGHT PATHS AROUND CLUSTERS */
+.bee {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.bee-tl {
+    top: 100px;
+    left: 100px;
+    animation: orbit-tl 8s linear infinite;
+}
+
+.bee-tr {
+    top: 100px;
+    right: 100px;
+    animation: orbit-tr 9s linear infinite;
+}
+
+.bee-bl {
+    bottom: 100px;
+    left: 100px;
+    animation: orbit-bl 10s linear infinite;
+}
+
+.bee-br {
+    bottom: 100px;
+    right: 100px;
+    animation: orbit-br 11s linear infinite;
+}
+
+@keyframes orbit-tl {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30px, -20px) rotate(15deg);
+    }
+
+    50% {
+        transform: translate(60px, 0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(30px, 20px) rotate(-15deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes orbit-tr {
+    0% {
+        transform: translate(0, 0) scaleX(-1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50px, 30px) scaleX(-1) rotate(-20deg);
+    }
+
+    100% {
+        transform: translate(0, 0) scaleX(-1) rotate(0deg);
+    }
+}
+
+@keyframes orbit-bl {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(40px, -40px) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes orbit-br {
+    0% {
+        transform: translate(0, 0) scaleX(-1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-30px, -50px) scaleX(-1) rotate(-10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) scaleX(-1) rotate(0deg);
     }
 }
